@@ -13,7 +13,7 @@ Este repositorio no tiene ramas por lo que al descargar el repositorio completo 
 
 Todos los ejercicos se encuentran dentro del mismo proyecto de React llamado `domina-react-typescript`. Dentro de la carpeta `src` encontrarás una carpeta corresponde por cada unidad del curso y cada una tiene un nombre con un formato de `Unidad#unidad`. Cada carpeta contiene subcarpetas que corresponden con los ejemplos de cada lección. Cada subcarpeta contiene componentes de React que funcionan como en punto de entrada del ejercicio. Los componentes tienen un nombre con un formato de `Unidad#unidadLeccion#leccion`. Por ejemplo, el componente de la lección 3 de la unidad 2 tiene un nombre de `Unidad02Leccion03.tsx`.
 
-Para correr cada ejercicio, el componente correspondiente debe agregarse a la función de retorno del component App `App.tsx`.
+Para correr cada ejercicio, el componente correspondiente debe agregarse al retorno de la función del component `App.tsx`.
 
 ## Instalación
 
