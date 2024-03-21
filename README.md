@@ -25,6 +25,7 @@ Para correr cada ejercicio, el componente correspondiente debe agregarse al reto
 2. Clona este repositorio en tu máquina local usando la Terminal (macOS) o CMD (Windows), o una herramienta GUI como SourceTree.
 3. Corre el comando `npm install` para instalar las dependencias.
 4. Corre el comando `npm start` para inicializar el servidor local.
+5. Utiliza el comando `npm run test` para correr las pruebas unitarias.
 
 ### Docente
 
