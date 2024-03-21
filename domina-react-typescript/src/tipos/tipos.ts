@@ -33,17 +33,6 @@ export type Producto = {
     categoria: string;
 };
 
-export type CategoriaProducto = {
-    id: number;
-    nombre: string;
-    descripcion?: string;
-};
-
-export type Inventario = {
-    products: Producto[];
-    categories: CategoriaProducto[];
-};
-
 export type Pelicula = {
     titulo: string;
     genero: string;

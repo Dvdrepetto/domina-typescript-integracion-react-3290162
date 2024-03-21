@@ -1,45 +1,86 @@
-import React, { useState } from 'react';
+import React, { ComponentType, useEffect, useRef } from 'react';
 
-// Definir un tipo genérico para los props
-type InjectedProps = {
-  renderCount: number;
+// Definir un tipo genérico para los props que el HOC pasará al componente envuelto
+type PropsInfo = {
+  reportarFocus: (nombre: string) => void;
 };
 
-// HOC que añade la funcionalidad del contador
-function withCounter<T>(WrappedComponent: React.ComponentType<T & InjectedProps>) {
-  // Creamos un nuevo componente
-  const WithCounter: React.FC<T> = (props) => {
-    const [renderCount, setRenderCount] = useState(0);
+// Definir la función del HOC que acepta un componente y devuelve un nuevo componente envuelto
+function conInfo<T extends object>(ComponenteEnvuelto: ComponentType<T & PropsInfo>) {
+  // Creamos un nuevo componente funcional
+  const ConInfo: React.FC<T> = (props) => {
+    const reportarFocus = (nombre: string) => {
+      console.log(`El componente ${nombre} tiene el focus ahora.`)
+    };
 
-    // Incrementamos el contador cada vez que se renderiza el componente
-    React.useEffect(() => {
-      setRenderCount((prevCount) => prevCount + 1);
-    }, []);
-
-    // Renderizamos el componente envuelto con los props y el contador
-    return <WrappedComponent {...props as T} renderCount={renderCount} />;
+    // Renderizamos el componente envuelto y le pasamos el evento de clic
+    return <ComponenteEnvuelto {...props as T} reportarFocus={reportarFocus} />;
   };
 
   // Devolvemos el nuevo componente
-  return WithCounter;
+  return ConInfo;
 }
 
-// Componente funcional que recibirá el contador a través de sus props
-const MyComponent: React.FC<{ name: string } & InjectedProps> = ({ name, renderCount }) => {
+// Componentes funcionales que recibirán reportarFocus como prop
+const Button: React.FC<{ label: string } & PropsInfo> = ({ label, reportarFocus }) => {
+  return <button
+    className="btn btn-primary"
+    onFocus={() => {
+      reportarFocus('Button');
+    }}>
+    {label}
+  </button>;
+};
+
+const Input: React.FC<PropsInfo> = ({ reportarFocus }) => {
   return (
-    <div>
-      <h1>Hello {name}</h1>
-      <p>This component has been rendered {renderCount} times.</p>
+    <input
+      type="number"
+      className="form-control"
+      onFocus={() => reportarFocus('Input')}
+    />
+  )
+};
+
+const Encabezado: React.FC<PropsInfo> = ({ reportarFocus }) => {
+  return (
+    <h4
+      tabIndex={0}
+      onFocus={() => {
+        reportarFocus('Encabezado')
+      }}>Prueba HOC</h4>
+  )
+};
+
+// Envolver el componente funcional con el HOC
+const ButtonConInfo = conInfo(Button);
+
+const InputConInfo = conInfo(Input);
+
+const EncabezadoConInfo = conInfo(Encabezado);
+
+// Uso del componente envuelto
+const Unidad03Leccion05 = () => {
+  return (
+    <div style={{
+      width: 300
+    }}>
+      <div className="row mt-2">
+        <EncabezadoConInfo />
+      </div>
+      <div className="row mt-2">
+        <InputConInfo />
+      </div>
+      <div className="row mt-2">
+        <ButtonConInfo label="Haz clic aquí" />
+      </div>
     </div>
   );
 };
 
-// Envolver el componente funcional con el HOC
-const MyComponentWithCounter = withCounter(MyComponent);
-
-// Uso del componente envuelto
-const Unidad03Leccion05 = () => {
-  return <MyComponentWithCounter name="World" />;
-};
-
 export default Unidad03Leccion05;
+
+function useEffec(arg0: () => any) {
+  throw new Error('Function not implemented.');
+}
+
