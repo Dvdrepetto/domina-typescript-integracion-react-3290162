@@ -1,4 +1,5 @@
 import React, { Component, ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 
 /**
  * 
@@ -27,41 +28,29 @@ const ComponenteReactElement = (): React.ReactElement => {
 
 // Componente funcional que devuelve un ReactNode
 const ComponenteReactNode = (): ReactNode => {
-  return (
-    <div>
-      Hola ReactNode
-      <span>!</span>
-    </div>
-  );
+  const valor = 'Hola ReactNode dentro de ReactPortal';
+  return valor;
 };
 
-class ComponenteClase extends Component {
-  render() {
-    return (
-      <div></div>
-    );
-  }
-}
+// Componente funcional que devuelve un ReactElement
+const ComponenteReactPortal = (): React.ReactPortal => {
+  return createPortal(ComponenteReactNode(), document.getElementById('root')!);
+};
 
 const Unidad01Leccion04 = () => {
   return (
     <div className="container mt-5">
-      <h2>Diferencias entre JSX.Element, ReactNode y ReactElement</h2>
-      {/* JSX.Element */}
+      <h5>Diferencias entre JSX.Element, ReactNode, ReactElement y ReactPortal</h5>
       <div>
-        <h3>JSX.Element</h3>
         <ComponenteJSXElement />
       </div>
-      {/* ReactNode */}
       <div>
-        <h3>ReactNode en componente clase</h3>
-        <ComponenteClase />
-      </div>
-      {/* ReactElement */}
-      <div>
-        <h3>ReactElement</h3>
         {ComponenteReactElement()}
       </div>
+      <div>
+        <ComponenteReactPortal />
+      </div>
+      {/* ReactElement */}
     </div>
   );
 };

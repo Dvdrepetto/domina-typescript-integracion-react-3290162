@@ -2,27 +2,27 @@ import { useState, useEffect } from 'react';
 
 // Definimos un tipo genérico para los datos almacenados en localStorage
 type LocalStorageDataType<T> = {
-  value: T | null;
-  setValue: (value: T) => void;
+  valor: T | null;
+  setValor: (valor: T) => void;
 };
 
 // Creamos el custom hook useLocalStorage
-function useLocalStorage<T>(key: string, initialValue: T): LocalStorageDataType<T> {
+function useLocalStorage<T>(key: string, valorInicial: T): LocalStorageDataType<T> {
   // Inicializamos el estado con el valor almacenado en localStorage o el valor inicial
-  const [value, setValue] = useState<T>(() => {
-    const storedValue = localStorage.getItem(key);
-    return storedValue ? JSON.parse(storedValue) : initialValue;
+  const [valor, setValor] = useState<T>(() => {
+    const valorAlmacenado = localStorage.getItem(key);
+    return valorAlmacenado ? JSON.parse(valorAlmacenado) : valorInicial;
   });
 
   // Actualizamos localStorage cuando el valor cambia
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
-  }, [key, value]);
+    localStorage.setItem(key, JSON.stringify(valor));
+  }, [key, valor]);
 
   // Devolvemos el valor y la función para actualizarlo
   return {
-    value,
-    setValue,
+    valor,
+    setValor,
   };
 }
 

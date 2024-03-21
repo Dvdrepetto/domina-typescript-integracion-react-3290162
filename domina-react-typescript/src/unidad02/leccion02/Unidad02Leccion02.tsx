@@ -10,7 +10,7 @@ const Unidad02Leccion02: React.FC = () => {
     const buscarDatos = debounce((texto) => {
         setResultados(
             USUARIOS.usuarios.filter(usuario => usuario.nombre.toLowerCase().indexOf(texto.toLocaleLowerCase()) > -1)
-                .map(usuario => usuario.nombre)
+            .map(usuario => usuario.nombre)
         );
     }, 100, { leading: true, trailing: true });
 

@@ -32,9 +32,9 @@ const Unidad02Leccion04: React.FC = () => {
       <h2>Contador</h2>
       <p>Cuenta: {cuenta}</p>
       <div className="row">
-        <button className="btn btn-success col-1 m-2" onClick={empezarContador} disabled={estaPausado}>Start</button>
-        <button className="btn btn-warning col-1 m-2" onClick={pausarContador} disabled={estaPausado}>Pause</button>
-        <button className="btn btn-primary col-1 m-2" onClick={reiniciarContador}>Reset</button>
+        <button className="btn btn-success col-2 m-2" onClick={empezarContador}>Start</button>
+        <button className="btn btn-warning col-2 m-2" onClick={pausarContador} disabled={estaPausado}>Pause</button>
+        <button className="btn btn-primary col-2 m-2" onClick={reiniciarContador}>Reset</button>
       </div>
     </div>
   );

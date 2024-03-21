@@ -16,7 +16,8 @@ const Unidad02Leccion03: React.FC = () => {
       setNumeros(prevNumeros => [...prevNumeros, nuevoNumero]);
       setValorInput('');
     }
-  }, [valorInput]); // La función solo se recreará si cambia el valor de valorInput
+  }, [valorInput]);
+  // La función solo se recreará si cambia el valor de valorInput
 
   return (
     <div className="container mt-3">

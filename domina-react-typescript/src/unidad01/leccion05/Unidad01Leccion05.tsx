@@ -1,7 +1,5 @@
 import React, { ReactElement } from 'react';
 
-// https://stackoverflow.com/questions/30971395/difference-between-react-component-and-react-element
-
 // Componente funcional que devuelve un ReactElement con propiedades
 const ItemProducto = (props: { nombre: string; precio: number }): ReactElement => {
   return (
@@ -15,13 +13,13 @@ const ItemProducto = (props: { nombre: string; precio: number }): ReactElement =
 };
 
 // Componente funcional que devuelve un array de ReactElement
-const ListaProductos = (): ReactElement => {
+const ListaProductos = (): JSX.Element => {
   const productos = [
     { nombre: 'Producto A', precio: 10 },
     { nombre: 'Producto B', precio: 20 },
     { nombre: 'Producto C', precio: 30 }
   ];
-
+  // <></> retorna un ReactFragment
   return (
     <>
       <h3 className="mb-3">Lista de productos</h3>

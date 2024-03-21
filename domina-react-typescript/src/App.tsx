@@ -25,7 +25,6 @@ import Unidad04Leccion01 from './unidad04/ejemplo_redux/Unidad04Leccion01';
 function App() {
   return (
     <div className="container mt-5">
-      <Unidad04Leccion01 />
     </div>
   );
 }
