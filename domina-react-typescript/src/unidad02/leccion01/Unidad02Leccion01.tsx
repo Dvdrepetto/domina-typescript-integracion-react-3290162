@@ -34,7 +34,7 @@ const Unidad02Leccion01: React.FC = () => {
     };
 
     // Función para manejar cambios en los campos de información de contacto
-    const handleContactInfoChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const manejaCambioContacto = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setUsuario(prevState => ({
             ...prevState,
@@ -95,18 +95,19 @@ const Unidad02Leccion01: React.FC = () => {
                 <div className="mb-3">
                     <h3>Información de Contacto</h3>
                     <label className="form-label">Casa:</label>
+                    <input className="form-control" type="text" name="casa" value={usuario.informacionContacto.casa} onChange={manejaCambioContacto} required />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Ciudad:</label>
-                    <input className="form-control" type="text" name="ciudad" value={usuario.informacionContacto.ciudad} onChange={handleContactInfoChange} required />
+                    <input className="form-control" type="text" name="ciudad" value={usuario.informacionContacto.ciudad} onChange={manejaCambioContacto} required />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Código Postal:</label>
-                    <input className="form-control" type="text" name="codigoPostal" value={usuario.informacionContacto.codigoPostal} onChange={handleContactInfoChange} required />
+                    <input className="form-control" type="text" name="codigoPostal" value={usuario.informacionContacto.codigoPostal} onChange={manejaCambioContacto} required />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Teléfono:</label>
-                    <input className="form-control" type="text" name="telefono" value={usuario.informacionContacto.telefono} onChange={handleContactInfoChange} required />
+                    <input className="form-control" type="text" name="telefono" value={usuario.informacionContacto.telefono} onChange={manejaCambioContacto} required />
                 </div>
                 <div className="mb-3">
                     <h3>Perfil</h3>

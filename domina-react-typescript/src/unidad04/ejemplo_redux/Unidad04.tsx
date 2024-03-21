@@ -4,7 +4,7 @@ import { store } from './store';
 import ProductList from './componentes/ListaProductos';
 import FormularioProducto from './componentes/FormularioProducto';
 
-const Unidad04Leccion01 = () => {
+const Unidad04 = () => {
     return (
         <Provider store={store}>
             <div className="container">
@@ -16,4 +16,4 @@ const Unidad04Leccion01 = () => {
     )
 };
 
-export default Unidad04Leccion01;
+export default Unidad04;

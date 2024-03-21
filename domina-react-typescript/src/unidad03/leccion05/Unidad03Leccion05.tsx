@@ -79,8 +79,3 @@ const Unidad03Leccion05 = () => {
 };
 
 export default Unidad03Leccion05;
-
-function useEffec(arg0: () => any) {
-  throw new Error('Function not implemented.');
-}
-

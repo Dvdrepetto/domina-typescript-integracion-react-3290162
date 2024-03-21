@@ -1,11 +1,11 @@
 // components/ProductList.tsx
 
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { seleccionarProductos } from '../reducers/productoReducer';
+import { useAppSelector } from '../hooks/hooks';
 
 const ListaProductos: React.FC = () => {
-    const productos = useSelector(seleccionarProductos);
+    const productos = useAppSelector(seleccionarProductos);
 
     return (
         <div className="mt-5 w-100">

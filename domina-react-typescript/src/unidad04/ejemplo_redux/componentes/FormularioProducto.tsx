@@ -1,9 +1,9 @@
 // components/ProductList.tsx
 
 import React, { SyntheticEvent, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { Producto } from '../../../tipos/tipos';
 import { agregarProducto } from '../reducers/productoReducer';
+import { useAppDispatch } from '../hooks/hooks';
 
 const FormularioProducto: React.FC = () => {
     const estadoDefault: Partial<Producto> = {
@@ -13,7 +13,7 @@ const FormularioProducto: React.FC = () => {
         precio: 0,
         descripcion: '',
     };
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [producto, setProducto] = useState<Partial<Producto>>(estadoDefault);
 
     const esProductoValido = (producto: Partial<Producto>): producto is Producto => {
