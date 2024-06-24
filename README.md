@@ -34,8 +34,8 @@ Para correr cada ejercicio, el componente correspondiente debe agregarse al reto
 Echa un vistazo a mis otros cursos en [LinkedIn Learning](https://www.linkedin.com/learning/instructors/natalia-corea).
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
-[lil-course-url]: https://www.linkedin.com/learning/building-a-graphql-project-with-react-js
-[lil-thumbnail-url]: https://cdn.lynda.com/course/2875095/2875095-1615224395432-16x9.jpg
+[lil-course-url]: https://www.linkedin.com/learning/domina-typescript-integracion-con-react
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/D4E0DAQEAcwDLt5FyUw/learning-public-crop_675_1200/0/1719233751814?e=2147483647&v=beta&t=DLshjC4VuMyPqnTs_Mde2ZwG_07xm87Lgym6p7xMCNo
 
 
 [1]: # (End of ES-Instruction ###############################################################################################)
