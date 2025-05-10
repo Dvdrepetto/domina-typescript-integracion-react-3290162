@@ -30,6 +30,8 @@ import Unidad05Leccion02 from './unidad05/leccion02/Unidad05Leccion02';
 function App() {
   return (
     <div className="container mt-5">
+      <Unidad01Leccion01 />
+      <Unidad05Leccion02  />
     </div>
   );
 }
